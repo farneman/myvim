@@ -32,15 +32,15 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme h80
+colorscheme darkrobot
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
 
 "Tab stuff
-set tabstop=3
-set shiftwidth=3
-set softtabstop=3
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
 set expandtab
 
 "Show command in bottom right portion of the screen
@@ -203,7 +203,7 @@ nmap <leader>bv :bel vsp
 au FocusLost * :wa
 
 " Backups
-set backupdir=~/.vim/tmp/backup// " backups
+set backupdir=~/.vim/tmp/backups// " backups
 set directory=~/.vim/tmp/swap// " swap files
 set backup " enable backup
 
