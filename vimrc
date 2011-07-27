@@ -29,7 +29,7 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme sift
+colorscheme h80
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
@@ -215,5 +215,4 @@ set showmatch " show matching brackets
 
 " print empty <a> tag
 map! ;h <a href=""></a><ESC>5hi
-
 
