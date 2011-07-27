@@ -21,9 +21,6 @@ set autowrite
 "Display current cursor position in lower right corner.
 set ruler
 
-"Want a different map leader than \
-"set mapleader = ",";
-
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
 set timeoutlen=500
