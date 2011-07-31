@@ -32,7 +32,7 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme h80
+colorscheme tetragrammaton
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
