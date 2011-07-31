@@ -21,9 +21,6 @@ set autowrite
 "Display current cursor position in lower right corner.
 set ruler
 
-"Want a different map leader than \
-"set mapleader = ",";
-
 "Ever notice a slight lag after typing the leader key + command? This lowers
 "the timeout.
 set timeoutlen=500
@@ -32,7 +29,7 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme tetragrammaton
+colorscheme desertEx
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
