@@ -23,3 +23,6 @@
 [submodule "bundle/css-snippets"]
 	path = bundle/css-snippets
 	url = https://github.com/tisho/css-snippets-snipmate.git
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive.git
