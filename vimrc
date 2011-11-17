@@ -29,16 +29,18 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme desertEx
+colorscheme pacific
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
 
 "Tab stuff
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=8
 set expandtab
+set shiftwidth=2
+set softtabstop=2
+
+set modeline
 
 "Show command in bottom right portion of the screen
 set showcmd
@@ -88,6 +90,8 @@ set mousehide
 
 "Shortcut to fold tags with leader (usually \) + ft
 nnoremap <leader>ft Vatzf
+
+set foldmethod=marker
 
 "Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>l
@@ -197,7 +201,11 @@ nmap <leader>hm :cd ~/ <CR>
 nmap <leader>bv :bel vsp
 
 " Saves file when Vim window loses focus
-au FocusLost * :wa
+" au FocusLost * :wa
+
+" Save folds
+au BufWinLeave * mkview
+au BufWinEnter * silent loadview
 
 " Backups
 set backupdir=~/.vim/tmp/backups// " backups
