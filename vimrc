@@ -168,6 +168,7 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
+
 " Reload snipmate
 function! ReloadSnippets( snippets_dir, ft )
     if strlen( a:ft ) == 0
