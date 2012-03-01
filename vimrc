@@ -29,7 +29,7 @@ set timeoutlen=500
 set hidden
 
 "Set the color scheme. Change this to your preference.
-colorscheme pacific
+colorscheme badwolf
 
 "Set font type and size. Depends on the resolution. Larger screens, prefer h20
 set guifont=Inconsolata:h14
@@ -167,6 +167,7 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+
 
 " Reload snipmate
 function! ReloadSnippets( snippets_dir, ft )
