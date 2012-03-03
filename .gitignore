@@ -2,4 +2,5 @@
 .netrwhist
 tmp/swap/*
 tmp/backups/*
+tmp/backup/*
 view/*
