@@ -36,7 +36,7 @@ set guifont=Inconsolata:h14
 
 "Tab stuff
 set tabstop=2
-set noexpandtab
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 
@@ -52,13 +52,33 @@ if has("autocmd")
   " Customisations based on house-style (arbitrary)
   autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType python setlocal ts=2 sts=2 sw=2 expandtab
    
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
+
+  " filetype settings for django
+  au BufNewFile,BufRead admin.py     setlocal filetype=python.django
+  au BufNewFile,BufRead urls.py      setlocal filetype=python.django
+  au BufNewFile,BufRead models.py    setlocal filetype=python.django
+  au BufNewFile,BufRead views.py     setlocal filetype=python.django
+  au BufNewFile,BufRead settings.py  setlocal filetype=python.django
+  au BufNewFile,BufRead forms.py     setlocal filetype=python.django
+
+  au BufNewFile,BufRead urls.py      setlocal nowrap
+  au BufNewFile,BufRead settings.py  normal! zR
+  au BufNewFile,BufRead dashboard.py normal! zR
+
+  " JS file settings
+  au FileType javascript setlocal foldmethod=marker
+  au FileType javascript setlocal foldmarker={,}
 endif
+
+"Switch filetypes for Django
+nnoremap _dt :set ft=htmldjango<CR>
+nnoremap _pd :set ft=python.django<CR>
 
 
 set modeline
