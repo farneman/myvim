@@ -120,6 +120,12 @@ set smartcase
 "Hide MacVim toolbar by default
 set go-=T
 
+"show invisibles
+set list
+
+" enable CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 "Hard-wrap paragraphs of text
 nnoremap <leader>q gqip
 
