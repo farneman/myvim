@@ -1,6 +1,6 @@
 # Sync vim config
 cd ~
-git clone http://github.com/farneman/myvim.git ~/.vim
+git clone https://github.com/farneman/myvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 cd ~/.vim
