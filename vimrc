@@ -287,3 +287,5 @@ set showmatch " show matching brackets
 " print empty <a> tag
 map! ;h <a href=""></a><ESC>5hi
 
+" Setup ctrlp
+set runtimepath^=~/.vim/bundle/ctrlp.vim

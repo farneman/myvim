@@ -1,10 +1,10 @@
 # Sync vim config
 cd ~
-git clone http://github.com/username/dotvim.git ~/.vim
+git clone https://github.com/farneman/myvim.git ~/.vim
 ln -s ~/.vim/vimrc ~/.vimrc
 ln -s ~/.vim/gvimrc ~/.gvimrc
 cd ~/.vim
 git submodule update --init
 
 # Upgrade submodules
-cd to bundle and git pull
+cd ~/.vim/bundle && git pull
