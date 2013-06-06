@@ -36,7 +36,7 @@ set guifont=Inconsolata:h14
 
 "Tab stuff
 set tabstop=2
-set expandtab
+set noexpandtab
 set shiftwidth=2
 set softtabstop=2
 
@@ -79,6 +79,7 @@ endif
 "Switch filetypes for Django
 nnoremap _dt :set ft=htmldjango<CR>
 nnoremap _pd :set ft=python.django<CR>
+nnoremap _ss :set ft=css syn=scss<CR>
 
 
 set modeline
@@ -122,6 +123,7 @@ set go-=T
 
 "show invisibles
 set list
+set listchars=tab:……,trail:¬,eol:¶
 
 " enable CtrlP
 set runtimepath^=~/.vim/bundle/ctrlp.vim
