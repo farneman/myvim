@@ -54,6 +54,7 @@ if has("autocmd")
   autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
   autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType xml setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
    
