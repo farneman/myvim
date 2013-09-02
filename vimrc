@@ -45,7 +45,7 @@ Bundle 'kevinw/pyflakes-vim'
 Bundle 'Valloric/YouCompleteMe'
 " UltiSnips
 Bundle 'SirVer/ultisnips'
-Bundle 'rstacruz/vim-ultisnips-css'
+Bundle 'farneman/vim-ultisnips-css'
 
 
 filetype plugin indent on     " required!
