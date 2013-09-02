@@ -4,17 +4,66 @@
 " http://farneman.net
 
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+" call pathogen#runtime_append_all_bundles()
+" call pathogen#helptags()
 
 " Forget compatibility with Vi. Who cares.
 set nocompatible
 
 " Enable filetypes
-filetype on
-filetype plugin on
-filetype indent on
+" filetype on
+" filetype plugin on
+" filetype indent on
+filetype off
 syntax on
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+
+" Bundles here:
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'tpope/vim-repeat'
+Bundle 'vim-scripts/tComment'
+Bundle 'Raimondi/delimitMate'
+Bundle 'tpope/vim-surround'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'vim-scripts/bufkill.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'mileszs/ack.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'kevinw/pyflakes-vim'
+Bundle 'Valloric/YouCompleteMe'
+" UltiSnips
+Bundle 'SirVer/ultisnips'
+Bundle 'rstacruz/vim-ultisnips-css'
+
+
+filetype plugin indent on     " required!
+"
+" Brief help
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+"
+" see :h vundle for more details or wiki for FAQ
+" NOTE: comments after Bundle command are not allowed...
+
+set runtimepath+=~/.vim/bundle/ultisnips 
+let g:UltiSnipsExpandTrigger="<leader><tab>"
+let g:UltiSnipsListSnippets ="<C-s-space>"
+let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
+let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 " Write the old file out when switching between files.
 set autowrite
@@ -172,21 +221,21 @@ nmap <space> :
 autocmd BufEnter * cd %:p:h
 
 " Map code completion to , + tab
-imap <leader><tab> <C-x><C-o>
+" imap <leader><tab> <C-x><C-o>
 
 " More useful command-line completion
-set wildmenu
+" set wildmenu
 
 " Auto-completion menu
-set wildmode=list:longest
+" set wildmode=list:longest
 
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
-set completeopt=longest,menuone
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
-  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
-inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
-  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" set completeopt=longest,menuone
+" inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+"   \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+" inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+"   \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
 
 " Map escape key to jj -- much faster
 imap jj <esc>
@@ -217,20 +266,6 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-
-" Reload snipmate
-function! ReloadSnippets( snippets_dir, ft )
-    if strlen( a:ft ) == 0
-        let filetype = "_"
-    else
-        let filetype = a:ft
-    endif
-
-    call ResetSnippets()
-    call GetSnippets( a:snippets_dir, filetype )
-endfunction
-
-nmap <leader>rr :call ReloadSnippets(snippets_dir, &filetype)<CR>
 
 
 " ------------------------ "
