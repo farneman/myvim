@@ -40,7 +40,11 @@ Bundle 'vim-scripts/bufkill.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'mileszs/ack.vim'
+Bundle 'jelera/vim-javascript-syntax'
+Bundle 'pangloss/vim-javascript'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'scrooloose/syntastic'
+Bundle 'marijnh/tern_for_vim'
 Bundle 'kevinw/pyflakes-vim'
 Bundle 'Valloric/YouCompleteMe'
 " UltiSnips
@@ -59,11 +63,15 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed...
 
+" remap Ultisnips to prevent clash with YCM
 set runtimepath+=~/.vim/bundle/ultisnips 
 let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsListSnippets ="<C-s-space>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+
+" let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 " Write the old file out when switching between files.
 set autowrite
