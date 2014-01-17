@@ -94,7 +94,7 @@ set guifont=Inconsolata:h14
 
 " Tab stuff
 set tabstop=2
-set noexpandtab
+set expandtab
 set shiftwidth=2
 set softtabstop=2
 
@@ -102,19 +102,21 @@ set softtabstop=2
 if has("autocmd")
   " Enable file type detection
   filetype on
-   
+
   " Syntax of these languages is fussy over tabs Vs spaces
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-   
+
   " Customisations based on house-style (arbitrary)
-  autocmd FileType html setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType css setlocal ts=2 sts=2 sw=2 noexpandtab
-  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType xml setlocal ts=4 sts=4 sw=4 noexpandtab
-  autocmd FileType php setlocal ts=4 sts=4 sw=4 noexpandtab
+  autocmd FileType html setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType css setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType javascript setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType xml setlocal ts=4 sts=4 sw=4 expandtab
+  autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType python setlocal ts=4 sts=4 sw=4 expandtab
-   
+  autocmd FileType ruby setlocal ts=2 sts=2 sw=2 expandtab
+  autocmd FileType erb setlocal ts=2 sts=2 sw=2 expandtab
+
   " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
@@ -232,10 +234,10 @@ autocmd BufEnter * cd %:p:h
 " imap <leader><tab> <C-x><C-o>
 
 " More useful command-line completion
-" set wildmenu
+set wildmenu
 
 " Auto-completion menu
-" set wildmode=list:longest
+set wildmode=list:longest
 
 " http://vim.wikia.com/wiki/Make_Vim_completion_popup_menu_work_just_like_in_an_IDE
 " set completeopt=longest,menuone
@@ -262,10 +264,10 @@ vmap <C-Down> xp`[V`]
 
 " Source the vimrc file after saving it. This way, you don't have to reload Vim to see the changes.
 if has("autocmd")
- augroup myvimrchooks
-  au!
-  autocmd bufwritepost .vimrc source ~/.vimrc
- augroup END
+  augroup myvimrchooks
+    au!
+    autocmd bufwritepost .vimrc source ~/.vimrc
+  augroup END
 endif
 
 " easier window navigation
