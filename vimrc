@@ -17,40 +17,45 @@ set nocompatible
 filetype off
 syntax on
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim/
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Bundles here:
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-repeat'
-Bundle 'vim-scripts/tComment'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-surround'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-scripts/tComment'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'burnettk/vim-angular'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'matthewsimo/angular-vim-snippets'
+Plugin 'briancollins/vim-jst'
 " UltiSnips
-Bundle 'SirVer/ultisnips'
-Bundle 'farneman/vim-ultisnips-css'
+Plugin 'SirVer/ultisnips'
+Plugin 'farneman/vim-ultisnips-css'
 
+call vundle#end()
 
 filetype plugin indent on     " required!
 "
@@ -62,6 +67,11 @@ filetype plugin indent on     " required!
 "
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle command are not allowed...
+
+let g:syntastic_html_checkers = ['jshint']
+
+au BufNewFile,BufRead *.ejs set filetype=ejs
+
 
 " remap Ultisnips to prevent clash with YCM
 set runtimepath+=~/.vim/bundle/ultisnips 
@@ -118,6 +128,9 @@ if has("autocmd")
   autocmd FileType erb setlocal ts=2 sts=2 sw=2 expandtab
 
   " Treat .rss files as XML
+  autocmd BufNewFile,BufRead *.json setfiletype json
+
+  " Treat .rss files as XML
   autocmd BufNewFile,BufRead *.rss setfiletype xml
 
   " filetype settings for django
@@ -141,6 +154,12 @@ endif
 nnoremap _dt :set ft=htmldjango<CR>
 nnoremap _pd :set ft=python.django<CR>
 nnoremap _ss :set ft=css syn=scss<CR>
+nnoremap _j :set ft=js<CR>
+nnoremap _js :set ft=json<CR>
+nnoremap _p :set ft=php<CR>
+nnoremap _h :set ft=html<CR>
+nnoremap _e :set ft=erb<CR>
+
 nnoremap _r :retab!<CR>
 
 
@@ -335,3 +354,9 @@ map! ;h <a href=""></a><ESC>5hi
 
 " Setup ctrlp
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+" Fix for bug with long lines and TMUX
+if $TMUX == "" && $TERM == "screen"
+  let &t_ti = &t_ti . "\eP\e[?7h\e\\"
+  let &t_te = "\eP\e[?7l\e\\" . &t_te
+endif
