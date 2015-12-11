@@ -4,9 +4,6 @@
 " http://farneman.net
 
 
-" call pathogen#runtime_append_all_bundles()
-" call pathogen#helptags()
-
 " Forget compatibility with Vi. Who cares.
 set nocompatible
 
@@ -27,29 +24,31 @@ Plugin 'gmarik/Vundle.vim'
 " Bundles here:
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'tpope/vim-abolish'
-Bundle 'tpope/vim-unimpaired'
-Bundle 'tpope/vim-repeat'
-Bundle 'vim-scripts/tComment'
-Bundle 'Raimondi/delimitMate'
-Bundle 'tpope/vim-surround'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'mileszs/ack.vim'
-Bundle 'jelera/vim-javascript-syntax'
-Bundle 'pangloss/vim-javascript'
-Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'scrooloose/syntastic'
-Bundle 'marijnh/tern_for_vim'
-Bundle 'kevinw/pyflakes-vim'
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-abolish'
+Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-repeat'
+Plugin 'vim-scripts/tComment'
+Plugin 'Raimondi/delimitMate'
+Plugin 'tpope/vim-surround'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'kien/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'scrooloose/syntastic'
+Plugin 'marijnh/tern_for_vim'
+Plugin 'kevinw/pyflakes-vim'
+Plugin 'Valloric/YouCompleteMe'
 " UltiSnips
-Bundle 'SirVer/ultisnips'
-Bundle 'farneman/vim-ultisnips-css'
+Plugin 'SirVer/ultisnips'
+Plugin 'farneman/vim-ultisnips-css'
+
+call vundle#end()
 
 
 filetype plugin indent on     " required!
@@ -69,6 +68,9 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsListSnippets ="<C-s-space>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
+
+let g:syntastic_css_checkers = []
+let g:syntastic_scss_checkers = []
 
 " let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
@@ -313,7 +315,7 @@ nmap <leader>bv :bel vsp
 
 " Save folds
 au BufWinLeave * mkview
-au BufWinEnter * silent loadview
+" au BufWinEnter * silent loadview
 
 " Backups
 set backupdir=~/.vim/tmp/backups// " backups
