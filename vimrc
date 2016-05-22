@@ -29,6 +29,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-obsession'
 Plugin 'vim-scripts/tComment'
 Plugin 'Raimondi/delimitMate'
 Plugin 'tpope/vim-surround'
@@ -71,6 +72,7 @@ let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
 let g:syntastic_css_checkers = []
 let g:syntastic_scss_checkers = []
+let g:syntastic_eruby_ruby_quiet_messages = {'regex': 'possibly useless use of a variable in void context'}
 
 " let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
